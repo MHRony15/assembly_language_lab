@@ -1,0 +1,31 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+  ARRAY DB 10 DUP(0)
+  ARRAY2 DB 1,2,3,4,5,6,7,8,9,10
+  ARRAY3 DW 65,66,67,68,69
+.CODE
+
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV CX,5
+    XOR BX,BX
+    MOV AH,2
+    
+    FOR:
+    MOV DX,ARRAY3[BX] 
+    XOR DH,DH
+
+    ;ADD DL,48
+    INT 21H
+    ADD BX,2
+    
+    LOOP FOR
+    
+    
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END
