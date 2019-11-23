@@ -13,4 +13,8 @@ MAIN PROC
   MAIN ENDP
 END
 ```
-
+### EXPENATION
+```assembly 
+.MODEL SMALL
+```
+Model 
