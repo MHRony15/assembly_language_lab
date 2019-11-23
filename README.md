@@ -1,0 +1,14 @@
+# BASIC CODE
+```assembly
+.MODEL SMALL
+.STACK 100
+.DATA
+.CODE
+MAIN PROC
+  
+  MOV AH , 4CH
+  INT 21H
+  MAIN ENDP
+END
+```
+
