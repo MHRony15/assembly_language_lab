@@ -15,23 +15,25 @@ MAIN PROC
     
     FOR:
         INT 21H 
-        INC BX
         CMP AL,0DH
         JE EXIT
         MOV ARRAY[BX],AL
-        
+        INC BX
     JMP FOR
     EXIT:
     
-    PRINTN 
+    PRINTN   
     MOV CX,BX
+    XOR BX,BX
     MOV AH,2
+    
     FOR2:
         MOV DL,ARRAY[BX]
         INT 21H
-        DEC BX
+        INC BX
         
     LOOP FOR2
+        ;EXIT2:
     
     MOV AH,4CH
     INT 21H
